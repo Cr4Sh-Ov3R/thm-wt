@@ -179,11 +179,13 @@ Après avoir téléchargé le fichier de la question 2, lançons le terminal :
 ``sqlite> .tables
 sessions users // résultat de la commande``
 
-``sqlite> PRAGMA table_info(users);
+```#/bin/bash
+sqlite> PRAGMA table_info(users);
 0|userID|TEXT|1||1
 1|username|TEXT|1||0
 2|password|TEXT|1||0
-3|admin|INT|1||0``
+3|admin|INT|1||0
+```
 
 ``sqlite> SELECT * FROM users;
 4413096d9c933359b898b6202288a650|admin|[redacted]|1
