@@ -158,7 +158,7 @@ Nous trouvons un commentaire indiquant que la base de donnée se trouve dans un 
 ***Q1 : Quelle est le nom du dossier mentionné :***
 > <details>
 >  <summary>Voir la réponse</summary>
-> > ``/assets``
+> /assets
 > </details>
 
 En allant dans le dossier en question nous trouvons une liste de dossiers et un fichier qui ressemble à ce que l'on cherche.
@@ -166,7 +166,7 @@ En allant dans le dossier en question nous trouvons une liste de dossiers et un 
 ***Q2 : Naviguer vers le dossier mentionné en question 1 et trouver le fichier qui nous intéresse.***
 > <details>
 >  <summary>Voir la réponse</summary>
-> > ``webapp.db``
+>  webapp.db
 >
 > </details>
 
@@ -198,7 +198,7 @@ Selon le format de la base révélée par ``PRAGMA table_info(users);`` nous pou
 
 > <details>
 > <summary>Voir la réponse</summary>
-> > 6eea9b7ef19179a06954edd0f6c05ceb
+> 6eea9b7ef19179a06954edd0f6c05ceb
 >
 > </details>
 
@@ -209,7 +209,7 @@ Nous lui passons le hash et il nous révèle le mot de passe en clair ainsi que 
 ***Q4 : Craquer le hash, quelle est le mot de passe en clair ?***
 > <details>
 > <summary>Voir la réponse</summary>
-> > ``qwertyuiop``
+> qwertyuiop
 >
 > </details>
 
@@ -218,7 +218,7 @@ Maintenant que nous avons le mot de passe, il suffit de se connecter sur la page
 ***Q5 : Connectez-vous avec le profil admin. Quel est le flag ?***
 > <details>
 > <summary>Voir le flag</summary>
-> > ``THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}``
+> THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
 >
 > </details>
 
