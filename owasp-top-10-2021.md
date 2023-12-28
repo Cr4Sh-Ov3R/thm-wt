@@ -135,7 +135,7 @@ Attention cependant à ne pas utiliser des fonctions cryptographiques dépassée
 
 Ici le hash présenté était ``5f4dcc3b5aa765d61d8327deb882cf99`` qui correspond au mot de passe ``password`` une fois passé dans Crackstation.
 
-Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021/){:target=”_blank”} 
+Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021/){:target="_blank"} 
 
 Q1 : Lire et comprendre les bases du crak de hash : Aucune réponse
 
