@@ -78,9 +78,12 @@ Q1 : Lire et comprendre ce qu'est une IDOR et comment ça fonctionne : Aucune r�
 
 Q2 : Déployer la machine distante et y accéder avec les identifiants fournis : Aucune réponse
 
+Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
 <details>
-  <summary>Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?</summary>
-  > Flag : flag{fivefourthree}
+  <summary>Voir le flag</summary>
+ 
+ > Flag : flag{fivefourthree}
+
 </details>
 
 [REDACTION EN COURS]
