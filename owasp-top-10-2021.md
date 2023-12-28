@@ -174,10 +174,14 @@ En se servant de ce que nous avons vu dans les tâches précédentes, essayons d
 
 Après avoir téléchargé le fichier de la question 2, lançons le terminal :
 
-``sqlite3 example.db //remplacer par le nom du fichier téléchargé``
+```#/bin/bash
+sqlite3 example.db //remplacer par le nom du fichier téléchargé
+```
 
-``sqlite> .tables
-sessions users // résultat de la commande``
+```#/bin/bash
+sqlite> .tables
+sessions users // résultat de la commande
+```
 
 ```#/bin/bash
 sqlite> PRAGMA table_info(users);
@@ -187,10 +191,12 @@ sqlite> PRAGMA table_info(users);
 3|admin|INT|1||0
 ```
 
-``sqlite> SELECT * FROM users;
+```#/bin/bash
+sqlite> SELECT * FROM users;
 4413096d9c933359b898b6202288a650|admin|[redacted]|1
 23023b67a32488588db1e28579ced7ec|Bob|ad0234829205b9033196ba818f7a872b|1
-4e8423b514eef575394ff78caed3254d|Alice|268b38ca7b84f44fa0a6cdc86e6301e0|0``
+4e8423b514eef575394ff78caed3254d|Alice|268b38ca7b84f44fa0a6cdc86e6301e0|0
+```
 
 Ici, selon ce que nous retourne nos requêtes, nous trouvons 3 utilisateurs, admin / Bob / Alice.
 
