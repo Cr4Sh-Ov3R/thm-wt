@@ -79,11 +79,15 @@ Q1 : Lire et comprendre ce qu'est une IDOR et comment ça fonctionne : Aucune r�
 Q2 : Déployer la machine distante et y accéder avec les identifiants fournis : Aucune réponse
 
 Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
-<details>
-  <summary>Voir le flag</summary>
- 
- > Flag : flag{fivefourthree}
 
-</details>
+> HINT : L'url contient un paramètre ``note_id=1``. En jouant un peu avec ce paramètre, on trouve une note qui réfèle un flag.
+
+> <details>
+>  <summary>Voir le flag</summary>
+> 
+> ![TryHackMe IDOR](#)
+> > Flag : flag{fivefourthree}
+>
+> </details>
 
 [REDACTION EN COURS]
