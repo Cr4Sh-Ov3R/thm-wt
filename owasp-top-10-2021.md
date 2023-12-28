@@ -92,7 +92,7 @@ Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
 
 ---
 
-**[TASK 5] 2. Cryptographic Failures**
+**[TASK 5] - 2. Cryptographic Failures**
 
 Il s'agit de toute vulnérabilite qui résulte d'une mauvaise ou d'un manque d'utilisation des algorithmes cryptographiques nécessaires à assurer la confidentialité des utilisateurs au sein d'une application web par exemple.
 
