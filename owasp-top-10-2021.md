@@ -14,8 +14,8 @@
 
 ***Top 10 Vulnérabilités - 2021***
 
-1. Broken Access Control
-2. Cryptographic Failures
+1. [Broken Access Control](#broken)
+2. [Cryptographic Failures](#crypto)
 3. Injection
 4. Insecure Design
 5. Security Misconfiguration
@@ -49,7 +49,7 @@ Q1 : Lire le contenu : Aucune réponse
 Q1 : Se connecter au réseau via votre openVPN ou votre AttackBox : Aucune réponse
 
 ---
-
+<a name="broken"></a>
 **[TASK 3] - 1. Broken Access Control**
 
 Les sites internet comportent souvent des pages ou contenus qui sont protégés et en accès restreint.
@@ -91,7 +91,7 @@ Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
 > </details>
 
 ---
-
+<a name="crypto"></a>
 **[TASK 5] - 2. Cryptographic Failures**
 
 Il s'agit de toute vulnérabilite qui résulte d'une mauvaise ou d'un manque d'utilisation des algorithmes cryptographiques nécessaires à assurer la confidentialité des utilisateurs au sein d'une application web par exemple.
@@ -104,5 +104,39 @@ Avec une faille cryptographique, vous ne pouvez plus être sûr que vos données
 Q1 : Lire l'introduction Cryptographic Failures et déployez la machine : Aucune réponse
 
 ---
+
+**[TASK 6] - Cryptographic Failures (Supporting Material 1)**
+
+Lorsque les développeurs conçoivent des application web (pour l'exemple) ils s'attendent généralement à ce que plusieurs utilisateurs interragissent en même temps avec leur plateforme. L'utilisation d'une base de donnée est donc idéale. 
+
+Les bases de données suivent généralement une syntace du langage SQL (ou noSQL que nous n'aborderons pas ici).
+
+Dans un environnement de production il n'est pas rare d'utiliser un SGBD (Système de gestion de bases de données) sur un serveur dédié, mais ce n'est pas toujours le cas. Elles peuvent également être présentes sous forme de fichiers car c'est plus simple à mettre en place et peut suffire quelques fois.
+
+Ici la salle se concentre sur les fichiers "flat-file" ou fichier à plat, lesquels sont parfois stockés à la racine du site, et donc (accessible depuis le site internet).
+
+Si tel était le cas, il suffirait de naviguer dans votre navigateur pour le trouver et le télécharger. 
+
+Le plus courant et le plus simple des bases de données en fichier à plat est SQLite, qui dispose d'un client léger ``sqlite3`` qui est présent par défaut sur de nombreuses distributions Linux.
+
+(Voir sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021) pour plus de détails sur son utilisation)
+
+Q1 : Lire et comprendre les bases de SQLite : Aucune réponse
+
+---
+
+**[TASK 7] - Cryptographic Failures (Supporting Material 2)**
+
+Les mots de passes sont généralement (et ça devrait constamment être le cas) stokés de manière sécurisée.
+
+Un mot de passe chiffré (et réversible par définition) ne respecte pas les règles de la CNIL, c'est pourquoi nous utilisons généralement des hash.
+
+Attention cependant à ne pas utiliser des fonctions cryptographiques dépassées (comme md5 ou sha1) car de simples outils disponibles en ligne comme Crackstation présenté ici ou préinstallés sur Kali linux par exemple permettraient de le cracker.
+
+Ici le hash présenté était ``5f4dcc3b5aa765d61d8327deb882cf99`` qui correspond au mot de passe ``password`` une fois passé dans Crackstation.
+
+Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021){:target="_blank"}
+
+Q1 : Lire et comprendre les bases du crak de hash : Aucune réponse
 
 [REDACTION EN COURS]
