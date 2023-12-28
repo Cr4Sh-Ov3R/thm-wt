@@ -1,4 +1,3 @@
-<p align="center"><img src="https://imgur.com/sP6d0iZ" alt="Owasp Top Ten 2021 - Try Hack Me Walktrough - by Cr4Sh"></p>
 
 <h1 align="center">OWASP top 10 2021 - By Cr4Sh</h1>
 
@@ -29,10 +28,9 @@
   <summary>Plus d'informations</summary>
 
   > L'objectif, dans ce walktrough est de vous guider et vous montrer une manière de faire. Vous aurez souvent plusieurs possibilités pour arriver au même résultat. 
-  > 
-  > Nous allons nous concentrer ici sur les tâches en lien avec les vulnérabilités, je passe volontairement les 2 premières taches liées à la présentation de la salle et à l'utilisation de la connexion OpeVPN et de l'AttackBox
   >
-  > ***Notes:*** *Les titres des vulnérabilités est volontairement écrits en anglais afin de pouvoir être au plus proche des dénominations de l'OWASP et ne pas risquer une déformation lors de la traduction*
+  > ***Notes:*** *Les titres des vulnérabilités est volontairement écrits en anglais afin de pouvoir être au plus proche des dénominations de l'OWASP et ne pas risquer une déformation lors de la traduction.*
+  > De même afin de ne pas spoiler celles et ceux d'entre vous qui souhaiteraient essayer de trouver les réponses par eux même (ce que je vous encourage fortement) les réponses potentiellement évoquées dans le texte seront nommées sous la mention ``[redacted]``
 
 </details>
 
@@ -135,11 +133,94 @@ Attention cependant à ne pas utiliser des fonctions cryptographiques dépassée
 
 Ici le hash présenté était ``5f4dcc3b5aa765d61d8327deb882cf99`` qui correspond au mot de passe ``password`` une fois passé dans Crackstation.
 
-Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021/){:target="_blank"}
-
-<a href="https://tryhackme.com/room/owasptop102021" target="_blank">
-Try Hack Me - Owasp Top 10 2021</a>
+Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021/)
 
 Q1 : Lire et comprendre les bases du crak de hash : Aucune réponse
+
+---
+
+**[TASK 8] - Cryptographic Failures (Challenge)**
+
+Mise en pratique. Connectez-vous à l'application web à l'adresse``http://MACHINE_IP:81/``
+
+D'après les consignes nous devons chercher les indices laissés par le développeur. Alors commençons examiner le code source depuis l'inspecteur.
+
+Nous ne trouvons aucun indice à proprement parlé sur le code de la page d'accueil, cependant, nous pouvons en voir un peu plus sur l'architecture du site. Il semblerait que les contenus additionnels tels que css / images soient contenus dans un dossier nommé à la racine du site comme révélé dans le tag HTML ``<head>``
+
+<p align="center"><img src="#" alt="screen cryptographic failures (challenge) try hack me"/></p>
+
+Vu que la consigne nous dit qu'un indice se trouve dans le code, examinons la page ``/login.php`` avant de nous précipiter.
+
+Nous trouvons un commentaire indiquant que la base de donnée se trouve dans un dossier précis. Merci à lui de confirmer notre intuition.
+
+<p align="center"><img src="#" alt="screen cryptographic failures (challenge) try hack me - comment find"></p>
+
+Q1 : Quelle est le nom du dossier mentionné : 
+<details>
+    <summary>Voir la réponse</summary>
+    > ``/assets``
+</details>
+
+En allant dans le dossier en question nous trouvons une liste de dossiers et un fichier qui ressemble à ce que l'on cherche.
+
+Q2 : Naviguer vers le dossier mentionné en question 1 et trouver le fichier qui nous intéresse.
+<details>
+    <summary>Voir la réponse</summary>
+    > ``webapp.db``
+
+</details>
+
+En se servant de ce que nous avons vu dans les tâches précédentes, essayons de trouver le hash de l'utilisateur admin.
+
+Après avoir téléchargé le fichier de la question 2, lançons le terminal :
+
+``sqlite3 example.db //remplacer par le nom du fichier téléchargé
+    ***
+
+sqlite> .tables
+sessions users // résultat de la commande
+
+sqlite> PRAGMA table_info(users);
+0|userID|TEXT|1||1
+1|username|TEXT|1||0
+2|password|TEXT|1||0
+3|admin|INT|1||0
+
+sqlite> SELECT * FROM users;
+4413096d9c933359b898b6202288a650|admin|[redacted]|1
+23023b67a32488588db1e28579ced7ec|Bob|ad0234829205b9033196ba818f7a872b|1
+4e8423b514eef575394ff78caed3254d|Alice|268b38ca7b84f44fa0a6cdc86e6301e0|0``
+
+Ici, selon ce que nous retourne nos requêtes, nous trouvons 3 utilisateurs, admin / Bob / Alice.
+
+Selon le format de la base révélée par ``PRAGMA table_info(users);`` nous pouvons en déduire que le hash se situe juste après le username.
+
+Q3 : En s'aidant de la TASK6, accédez aux données sensibles trouvées. Quel est le hash de l'utilisateur admin ?
+
+<details>
+    <summary>Voir la réponse</summary>
+    > 6eea9b7ef19179a06954edd0f6c05ceb
+
+</details>
+
+Le fichier est hashé, il nous faut donc le craquer pour découvrir le mot de passe en clair. Comme vu dans la TASK7, nous pouvons utiliser un outils en ligne du nom de crackstation.
+
+Nous lui passons le hash et il nous révèle le mot de passe en clair ainsi que le format (ici md5)
+
+Q4 : Craquer le hash, quelle est le mot de passe en clair ?
+<details>
+    <summary>Voir la réponse</summary>
+    > ``qwertyuiop``
+
+</details>
+
+Maintenant que nous avons le mot de passe, il suffit de se connecter sur la page ``/login.php``
+
+Q5 : Connectez-vous avec le profil admin. Quel est le flag ?
+<details>
+    <summary>Voir le flag</summary>
+    > ``THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}``
+
+</details>
 
 [REDACTION EN COURS]
