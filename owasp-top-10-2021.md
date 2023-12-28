@@ -85,7 +85,7 @@ Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
 > <details>
 >  <summary>Voir le flag</summary>
 > 
-> ![TryHackMe IDOR](#)
+> ![TryHackMe IDOR](/assets/img/owasp10-IDOR-flag.png)
 > > Flag : flag{fivefourthree}
 >
 > </details>
