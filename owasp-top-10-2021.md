@@ -12,7 +12,7 @@
 
 ****
 
-*** Top 10 Vulnérabilités - 2021 ***
+***Top 10 Vulnérabilités - 2021***
 
 1. Broken Access Control
 2. Cryptographic Failures
@@ -89,5 +89,20 @@ Q3 : Regarder les notes des autres utilisateurs. Quel est le flag ?
 > > Flag : flag{fivefourthree}
 >
 > </details>
+
+---
+
+**[TASK 5] 2. Cryptographic Failures**
+
+Il s'agit de toute vulnérabilite qui résulte d'une mauvaise ou d'un manque d'utilisation des algorithmes cryptographiques nécessaires à assurer la confidentialité des utilisateurs au sein d'une application web par exemple.
+
+
+Pour reprendre une thématique actuelle, lorsque vous utlisez une solution de messagerie "sécurisée", vous tenez à ce que vos messages soient protégés de toute utilisation frauduleuse et vous souhaitez être certains que seuls vos correspondants légitimes ne puissent voir votre message déchiffré. 
+
+Avec une faille cryptographique, vous ne pouvez plus être sûr que vos données sensibles ne soient pas dévoilées. (je vous invite à lire l'exemple qui est plus complet sur le site de [TryHackMe](https://tryhackme.com/signup?referrer=63efffa0f0738c004b13a210 "Apprenez la cybersécurité avec Try Hack Me")
+
+Q1 : Lire l'introduction Cryptographic Failures et déployez la machine : Aucune réponse
+
+---
 
 [REDACTION EN COURS]
