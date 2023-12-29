@@ -175,12 +175,12 @@ En se servant de ce que nous avons vu dans les tâches précédentes, essayons d
 Après avoir téléchargé le fichier de la question 2, lançons le terminal :
 
 ```#/bin/bash
-sqlite3 example.db //remplacer par le nom du fichier téléchargé
+sqlite3 example.db #remplacer par le nom du fichier téléchargé
 ```
 
 ```#/bin/bash
 sqlite> .tables
-sessions users // résultat de la commande
+sessions users #résultat de la commande
 ```
 
 ```#/bin/bash
