@@ -14,7 +14,7 @@
 ****
 <a name="room"></a>
 
-> Room : [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021 {:target="_blank"})
+> Room : [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021)
 
 ***Top 10 Vulnérabilités - 2021***
 
@@ -29,15 +29,12 @@
 9. [Security Logging & Monitoring Failures](#securityLogging)
 10. [Server-Side Request Forgery (SSRF)](#ssrf)
 
-<details>
-  <summary>Plus d'informations</summary>
 
   > L'objectif, dans ce walktrough est de vous guider et vous montrer une manière de faire. Vous aurez souvent plusieurs possibilités pour arriver au même résultat. 
   >
   > ***Notes:*** *Les titres des vulnérabilités est volontairement écrits en anglais afin de pouvoir être au plus proche des dénominations de l'OWASP et ne pas risquer une déformation lors de la traduction.*
   > De même afin de ne pas spoiler celles et ceux d'entre vous qui souhaiteraient essayer de trouver les réponses par eux même (ce que je vous encourage fortement) les réponses potentiellement évoquées dans le texte seront nommées sous la mention ``[redacted]``
 
-</details>
 
 ****
 
@@ -74,7 +71,7 @@ Une [vulnérabilité découverte en 2019](https://bugs.xdavidhu.me/google/2021/0
 
 Cette vulnérabilité vous permet d'accéder à des ressources qui ne devrait pas être accessible au vues de nos droits utilisateurs. 
 
-Ça peut se produire quand par exemple on utilise une référence d'objet directe (exemple sur cette salle  un paramètre ``id=`` avec la référence de notre compte ``https://bank.thm/account?id=111111`` )
+Ça peut se produire quand par exemple on utilise une référence d'objet directe (exemple sur cette salle un paramètre ``id=`` avec la référence de notre compte ``https://bank.thm/account?id=111111`` )
 
 Si un utilisateur tente de modifier le numéro d'identifiant dans l'url et que le site est mal configuré, alors il peut se retrouver avec les informations bancaires de son voisin.
 
@@ -311,5 +308,45 @@ Elle permet par exemple à l'attaquant d'executer des commandes du système d'ex
 >   ![TryHackMe Command Injection alpine linux version](/assets/img/owasp-10-2021/owasp10-command-injection-alpine-v.png)
 > >  3.16.0
 </details>
+
+---
+
+<a name="insecure"></a>
+
+**[TASK 11] - 4. Insecure Design**
+
+La conception non sécurisée fait référence aux vulnérabilité inhérentes à l'architecture de l'application.
+
+Un bon exemple est [le cas d'Instagram](https://thezerohack.com/hack-any-instagram) qui, il y a quelque temps, permettait aux utilisateurs de réinitialiser leurs mots de passe en envoyant un code à 6 chiffres par sms. Des sécurités étaient certes mises en place mais des hackers ont trouvé un moyen de contourner ces mesures.
+
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
+
+> Naviguez sur http://MACHINE_IP:85/ et accédez au compte de joseph. Cette application présente également un défaut de conception de son mecanisme de réinitialisation de mot de passe. Trouvez comment l'utiliser de manière abusive.
+
+***Q1 : Essayez de changer le mot de passe de joseph. Gardez en tête la méthode utilisée pour vérifier que vous êtes bien Joseph. : Aucune réponse***
+
+Pour cette 2e question, lorsque nous demandons de renouveler le mot de passe de joseph, le site nous demande de répondre à une question de sécurité parmis 3. L'une d'entre elle se démarque car elle ne demande pas de renseignements directs sur l'utilisateur.
+
+![TryHackMe Insecure security question](/assets/img/owasp-10-2021/owasp10-insecure-security-question.png)
+
+Je choisis donc "What's your favourite colour?". 
+
+La majorité des personnes pensent en couleurs simples, je pars donc sur la base "bleu, rouge, jaune, vert, noir, blanc", j'élargirais la gamme si besoin. (en anglais ici car le site est anglais).
+
+Une fois la bonne couleur trouvée, le site me génère un nouveau mot de passe, il ne me reste plus qu'à me connecter et à chercher ce que je veux.
+
+![TryHackMe Insecure connected](/assets/img/owasp-10-2021/owasp10-insecure-connected.png)
+
+***Q2 : Quelle est le flag du compte de joseph ?***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Insecure flag](/assets/img/owasp-10-2021/owasp10-insecure-flag.png)
+> >  THM{Not_3ven_c4tz_c0uld_sav3_U!}
+</details>
+
+
+***
+
 
 [REDACTION EN COURS]
