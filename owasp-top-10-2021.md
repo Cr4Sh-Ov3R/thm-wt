@@ -395,6 +395,22 @@ import os; print(os.popen("cat app.py").read())
 > >  THM{Just_a_tiny_misconfiguration}
 </details>
 
+---
 
+<a name="vulComponent"></a>
+
+**[TASK 13] - 6. Vulnerable and Outdated Components**
+
+Il s'agit des vulnérabilités bien connues. 
+
+Par exemple, une entreprise qui utlise Wordpress depuis quelques années et qui ne l'a pas mis à jour.
+
+En utilisant un outil tel que ``WPScan``, on peut découvrir la version de Wordpress utilisée, par exemple la 4.6, et rechercher si elle est vulnérable et si un exploit existe sur ``Exploit-DB`` par exemple.
+
+Ce type de vulnérabilité est relativement dévastateur et demande très peu de travail à l'attaquant.
+
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
+
+***Q1 : Lire le contenu de ces vulnérabilités : Aucune réponse***
 
 [REDACTION EN COURS]
