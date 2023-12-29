@@ -309,7 +309,7 @@ Elle permet par exemple à l'attaquant d'executer des commandes du système d'ex
 >   <summary>Voir la réponse</summary>
 >   
 >   ![TryHackMe Command Injection alpine linux version](/assets/img/owasp-10-2021/owasp10-command-injection-alpine-v.png)
->   3.16.0
+> >  3.16.0
 </details>
 
 [REDACTION EN COURS]
