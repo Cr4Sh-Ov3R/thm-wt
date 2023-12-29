@@ -345,8 +345,53 @@ Une fois la bonne couleur trouvée, le site me génère un nouveau mot de passe,
 > >  THM{Not_3ven_c4tz_c0uld_sav3_U!}
 </details>
 
+---
 
-***
+<a name="misconf"></a>
+
+**[TASK 12] - 5. Security Misconfiguration**
+
+Les erreurs de configuration se distinguent car la sécurité aurait pu être configurée de manière appropriée mais ne l'a pas été. Même avec des mises à jour fréquentes, les erreurs de configuration peuvent rendre vos machines vulnérables.
+
+On retrouve par exemple les *permissions mal configurées*, *l'activation de fonctionnalités inutiles*, des *messages d'erreurs trop détaillés* ...
+
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
+
+> Naviguez sur http://MACHINE_IP:86/console pour essyer de trouver des erreurs de configuration.
+
+***Q1 : Accédez à la console Werkzeug : Aucune réponse***
+
+Utilisez la console Werkzeug pour executer le code python afin de lancer la commande ``ls -l`` sur le serveur
+
+> HINT : ```python import os; print(os.popen("ls -l").read())```
+>
+> *Notes : Nous importons le module ``os`` de python qui nous fournit un moyen d'utiliser les fonctionnalités dépendantes du système d'exploitation (Operating System).*
+> *Ensuite, nous faisons appel à la méthode python popen() qui va venir prendre en compte la commande que l'on souhaite excécuter (ici la commande ``ls -l``) qui sera lue grâce à  ``.read()``.*
+
+***Q2 : Quel est le nom de la base de données (celle avec l'extention ``.db``) ?***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Security Missconfiguration database file](/assets/img/owasp-10-2021/owasp10-misconf-database-file.png)
+> >  todo.db
+</details>
+
+Pour réponre à la question suivant, nous devons modifier le code à rentrer dans la console afin de trouver le contenu de la variable ``secret_flag`` qui se trouve dans le code source du fichier ``app.py``.
+
+Nous commençons dont à importer ``os``, puis dans l'idéal nous souhaiterions lire le fichier ``app.py``. Sur un terminal linux nous utiliserions ``cat app.py``, je décide donc de tenter le coup et de remplacer ``ls -l`` contenu dans l'exemple précédent.
+
+```python 
+import os; print(os.popen("cat app.py").read())
+```
+
+***Q3 : Modifiez le code pour lire le contenu du fichier ``app.py``, lequel contient le code source de l'application. Quelle est la valeur de la variable ``secret_flag`` contenue dans le code source ?***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Security Missconfiguration secret flag](/assets/img/owasp-10-2021/owasp10-misconf-secret-flag.png)
+> >  THM{Just_a_tiny_misconfiguration}
+</details>
+
 
 
 [REDACTION EN COURS]
