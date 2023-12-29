@@ -1,7 +1,9 @@
 
 <h1 align="center">OWASP top 10 2021 - By Cr4Sh</h1>
 
-****
+---
+
+> Pour rejoindre [TryHackMe](https://tryhackme.com/signup?referrer=63efffa0f0738c004b13a210 "Apprenez la cybersécurité avec Try Hack Me")
 
 ***Contexte*** :
 
@@ -10,19 +12,22 @@
   > L'OWASP top 10 est l'un des projets les plus connus de l'OWASP. Elle recense les 10 vulnérabilités les plus critiques.
 
 ****
+<a name="room"></a>
+
+> Room : [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021 {:target="_blank"})
 
 ***Top 10 Vulnérabilités - 2021***
 
 1. [Broken Access Control](#broken)
 2. [Cryptographic Failures](#crypto)
-3. Injection
-4. Insecure Design
-5. Security Misconfiguration
-6. Vulnerable and Outdated Components
-7. Identification and Authentications Failures
-8. Software and Data Integrity Failures
-9. Security Logging & Monitoring Failures
-10. Server-Side Request Forgery (SSRF)
+3. [Injection](#injection)
+4. [Insecure Design](#insecure)
+5. [Security Misconfiguration](#misconf)
+6. [Vulnerable and Outdated Components](#vulComponent)
+7. [Identification and Authentications Failures](#authFailure)
+8. [Software and Data Integrity Failures](#dataIntegrity)
+9. [Security Logging & Monitoring Failures](#securityLogging)
+10. [Server-Side Request Forgery (SSRF)](#ssrf)
 
 <details>
   <summary>Plus d'informations</summary>
@@ -48,6 +53,7 @@
 
 ---
 <a name="broken"></a>
+
 **[TASK 3] - 1. Broken Access Control**
 
 Les sites internet comportent souvent des pages ou contenus qui sont protégés et en accès restreint.
@@ -62,7 +68,7 @@ Une [vulnérabilité découverte en 2019](https://bugs.xdavidhu.me/google/2021/0
 
 ---
 
-**[TASK 4] - Broken Access Control (IDOR Challenge)**
+**[TASK 4] - 1.1. Broken Access Control (IDOR Challenge)**
 
 > IDOR = Insecure Direct Object Reference (Référence directe à l'objet)
 
@@ -90,6 +96,7 @@ Si un utilisateur tente de modifier le numéro d'identifiant dans l'url et que l
 
 ---
 <a name="crypto"></a>
+
 **[TASK 5] - 2. Cryptographic Failures**
 
 Il s'agit de toute vulnérabilite qui résulte d'une mauvaise ou d'un manque d'utilisation des algorithmes cryptographiques nécessaires à assurer la confidentialité des utilisateurs au sein d'une application web par exemple.
@@ -97,13 +104,15 @@ Il s'agit de toute vulnérabilite qui résulte d'une mauvaise ou d'un manque d'u
 
 Pour reprendre une thématique actuelle, lorsque vous utlisez une solution de messagerie "sécurisée", vous tenez à ce que vos messages soient protégés de toute utilisation frauduleuse et vous souhaitez être certains que seuls vos correspondants légitimes ne puissent voir votre message déchiffré. 
 
-Avec une faille cryptographique, vous ne pouvez plus être sûr que vos données sensibles ne soient pas dévoilées. (je vous invite à lire l'exemple qui est plus complet sur le site de [TryHackMe](https://tryhackme.com/signup?referrer=63efffa0f0738c004b13a210 "Apprenez la cybersécurité avec Try Hack Me")
+Avec une faille cryptographique, vous ne pouvez plus être sûr que vos données sensibles ne soient pas dévoilées. 
+
+Je vous invite à lire l'exemple qui est plus complet sur le site de [TryHackMe](https://tryhackme.com/signup?referrer=63efffa0f0738c004b13a210 "Apprenez la cybersécurité avec Try Hack Me")
 
 ***Q1 : Lire l'introduction Cryptographic Failures et déployez la machine : Aucune réponse***
 
 ---
 
-**[TASK 6] - Cryptographic Failures (Supporting Material 1)**
+**[TASK 6] - 2.1. Cryptographic Failures (Supporting Material 1)**
 
 Lorsque les développeurs conçoivent des application web (pour l'exemple) ils s'attendent généralement à ce que plusieurs utilisateurs interragissent en même temps avec leur plateforme. L'utilisation d'une base de donnée est donc idéale. 
 
@@ -117,13 +126,13 @@ Si tel était le cas, il suffirait de naviguer dans votre navigateur pour le tro
 
 Le plus courant et le plus simple des bases de données en fichier à plat est SQLite, qui dispose d'un client léger ``sqlite3`` qui est présent par défaut sur de nombreuses distributions Linux.
 
-(Voir sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021) pour plus de détails sur son utilisation)
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
 
 ***Q1 : Lire et comprendre les bases de SQLite : Aucune réponse***
 
 ---
 
-**[TASK 7] - Cryptographic Failures (Supporting Material 2)**
+**[TASK 7] - 2.2. Cryptographic Failures (Supporting Material 2)**
 
 Les mots de passes sont généralement (et ça devrait constamment être le cas) stokés de manière sécurisée.
 
@@ -133,13 +142,13 @@ Attention cependant à ne pas utiliser des fonctions cryptographiques dépassée
 
 Ici le hash présenté était ``5f4dcc3b5aa765d61d8327deb882cf99`` qui correspond au mot de passe ``password`` une fois passé dans Crackstation.
 
-Pour plus de détails de la procédure sur la salle [Try Hack Me - Owasp Top 10 2021](https://tryhackme.com/room/owasptop102021/)
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
 
 ***Q1 : Lire et comprendre les bases du crak de hash : Aucune réponse***
 
 ---
 
-**[TASK 8] - Cryptographic Failures (Challenge)**
+**[TASK 8] - 2.3. Cryptographic Failures (Challenge)**
 
 Mise en pratique. Connectez-vous à l'application web à l'adresse``http://MACHINE_IP:81/``
 
@@ -229,5 +238,78 @@ Maintenant que nous avons le mot de passe, il suffit de se connecter sur la page
 > THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
 >
 > </details>
+
+---
+<a name="injection"></a>
+
+**[TASK 9] - 3 Injection**
+
+Les failles d'injection sont très courantes dans les applications d'aujourd'hui.
+
+Une injection se produit car l'application interprète les entrées de l'utilisateur comme des commandes. 
+
+Il existe différents type d'injection.
+
+- Les injections SQL grâce à des requêtes SQL renseignées par l'attaquant.Elle peuvent donner lieu à de la consultation ou manipulation des informations contenues sur la base de donnée par exemple ...
+
+- Les injections de commande qui se produit lorsque l'entrée de l'utilisateur est transmise directement à des commandes du système ...
+
+La meilleure façon de s'en prémunir est de controler et de nettoyer les données entrées par les utilisateur et dans le cas où elles ne correspondraient pas aux "entrées sûres", de les rejeter en générant une erreur.
+
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
+
+***Q1 : J'ai compris les différents type d'attaque par injection : Aucune réponse***
+
+---
+
+**[TASK 10] - 3.1. Command Injection**
+
+L'injection de commande se produit lorsque le code qui se trouve côté serveur (PHP par exemple) fait appel à une fonction qui interagit directement avec la console du serveur.
+
+Elle permet par exemple à l'attaquant d'executer des commandes du système d'exploitation de manière arbitraire. (Lister les fichiers, leurs contenus, faire de la reconnaissance de serveur ...) comme s'il s'agissait de l'administrateur.
+
+> Plus d'infos sur la salle [TryHackMe Owasp top 10 2021](#room)
+
+> Pour répondre aux questions nagiguez sur http://MACHINE_IP:82/ et exploitez le serveur cosway.
+
+***Q1 : Quel fichier étrange trouvez-vous dans le répertoire racine du site ?*** 
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Command Injection file](/assets/img/owasp-10-2021/owasp10-command-injection-file.png)
+>   drpepper.txt
+</details>
+
+***Q2 : Combien y a t'il d'utilisateurs non-root/non-service/non-daemon ?***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Command Injection non-root users](/assets/img/owasp-10-2021/owasp10-command-injection-non-root.png)
+>   0
+</details>
+
+***Q3 : Quel est l'utilisateur de ce site ? ***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Command Injection user](/assets/img/owasp-10-2021/owasp10-command-injection-user.png)
+>   apache
+</details>
+
+***Q4 : Quel est le shell de cet utilisateur ? ***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Command Injection user shell](/assets/img/owasp-10-2021/owasp10-command-injection-user-shell.png)
+>   /sbin/nologin
+</details>
+
+***Q5 : Quelle est la version d'Alpine Linux ? ***
+> <details>
+>   <summary>Voir la réponse</summary>
+>   
+>   ![TryHackMe Command Injection alpine linux version](/assets/img/owasp-10-2021/owasp10-command-injection-alpine-v.png)
+>   3.16.0
+</details>
 
 [REDACTION EN COURS]
