@@ -363,7 +363,10 @@ On retrouve par exemple les *permissions mal configurées*, *l'activation de fon
 
 Utilisez la console Werkzeug pour executer le code python afin de lancer la commande ``ls -l`` sur le serveur
 
-> HINT : ```python import os; print(os.popen("ls -l").read())```
+> HINT : 
+> ```python 
+> import os; print(os.popen("ls -l").read())
+> ```
 >
 > *Notes : Nous importons le module ``os`` de python qui nous fournit un moyen d'utiliser les fonctionnalités dépendantes du système d'exploitation (Operating System).*
 > *Ensuite, nous faisons appel à la méthode python popen() qui va venir prendre en compte la commande que l'on souhaite excécuter (ici la commande ``ls -l``) qui sera lue grâce à  ``.read()``.*
