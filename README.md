@@ -1,5 +1,7 @@
 <p align="center"><img src="https://tryhackme-badges.s3.amazonaws.com/Cr4Sh.png" alt="TryHackMe"></p>
 
+<script src="https://tryhackme.com/badge/1732668"></script>
+
 <h1 align="center">TryHackMe - Walktrough</h1>
 
 ****
