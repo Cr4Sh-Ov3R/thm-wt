@@ -439,7 +439,7 @@ Apr 17 00:01:31 [redacted] CRON[732]: pam_unix(cron:session): session opened for
 Apr 17 00:01:31 [redacted] CRON[733]: pam_unix(cron:session): session opened for user ubuntu by (uid=0)
 Apr 17 00:01:31 [redacted] sudo:   ubuntu : TTY=unknown ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/python3 -m websockify 80 localhost:5901 -D
 Apr 17 00:01:31 [redacted] sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-Apr 17 00:01:31 tryhackme sudo:   ubuntu : TTY=unknown ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/sbin/runuser -l ubuntu -c vncserver :1 -depth 24 -geometry 1900x1200
+Apr 17 00:01:31 [redacted] sudo:   ubuntu : TTY=unknown ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/sbin/runuser -l ubuntu -c vncserver :1 -depth 24 -geometry 1900x1200
 Apr 17 00:01:31 [redacted] sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
 Apr 17 00:01:31 [redacted] systemd: pam_unix(systemd-user:session): session opened for user ubuntu by (uid=0)
 Apr 17 00:01:31 [redacted] runuser: pam_unix(runuser-l:session): session opened for user ubuntu by (uid=0)
