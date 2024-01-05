@@ -62,28 +62,26 @@ Dans l'énoncé on nous informe que l'on a reçu le message chiffré suivant et 
 
 Nous avions la possibilité de le faire à la main, partant du principe que, selon la fréquence des lettres, ainsi que leurs "taux d'utilisation", il est possible que nous puissions retrouver certaines lettres substituées et déchiffrer le message.
 
-***Textes anglais :***
-D'après les statistiques, dans les textes anglais (TryHackMe étant en anglais), les lettres les plus courantes sont le *"e"* (fréquence de 13%), le *"t"* (fréquence de 9.1%) et le *"a"* (fréquence de 8.2%).
+> ***Textes anglais :***
+> D'après les statistiques, dans les textes anglais (TryHackMe étant en anglais), les lettres les plus courantes sont le *"e"* (fréquence de 13%), le *"t"* (fréquence de 9.1%) et le *"a"* (fréquence de 8.2%).
+> 
+> On sait également d'après ces mêmes statistiques que les premières lettres les plus courantes sont le *"t"* (fréquence de 16%), le *"a"* (fréquence de 11.7%) et le *"o"* (fréquence de 7.6%).
 
-On sait également d'après ces mêmes statistiques que les premières lettres les plus courantes sont le *"t"* (fréquence de 16%), le *"a"* (fréquence de 11.7%) et le *"o"* (fréquence de 7.6%).
+> ***Textes français :***
+> Pour les textes français, l'Université de Toulouse a tiré une table de fréquence qui est la suivante (en 2008 selon la base du corpus de Wikipedia en français).
+>
+> Nous retrouvons donc pour les 3 premières lettres, le *"e"* (fréquence de 12.1%), le *"a"* (fréquence de 7.11%) et le *"i"* (fréquence de 6.59%).
 
-***Textes français :***
-Pour les textes français, l'Université de Toulouse a tiré une table de fréquence qui est la suivante (en 2008 selon la base du corpus de Wikipedia en français).
-
-Nous retrouvons donc pour les 3 premières lettres, le *"e"* (fréquence de 12.1%), le *"a"* (fréquence de 7.11%) et le *"i"* (fréquence de 6.59%).
-
-> Prudence, cette analyse étant basée sur le corpus précité, elle peut sensiblement varier en fonction du corpus choisi, cependant, le *"e"* et le *"a"* semble être majoritairement cités.
+Prudence, cette analyse étant basée sur le corpus précité, elle peut sensiblement varier en fonction du corpus choisi, cependant, le *"e"* et le *"a"* semble être majoritairement cités.
 
 
 Une autre possibilité qui s'offre à nous, et nous l'utiliserons ici, même si je vous invite à prendre du temps pour essayer de réaliser vous même le déchiffrement avec les fréquence d'apparition des lettres.
 
-> c'est sympa et vous aurez un plus grand sentiment de satisfaction, sans compter que pour épater les copains en soirée ça en jette.
+> C'est sympa et vous aurez un plus grand sentiment de satisfaction, sans compter que pour épater les copains en soirée ça en jette.
 
 Nous allons donc ici utiliser le site web ``www.quipqiup.com`` pour décriffrer le message.
 
 <p align="center"><img src="/assets/img/intro-to-cryptography/intro-to-cryptography-result-quipqiup.png" alt="TryHackMe Introduction to Cryptography Result Quipqiup"/></p>
-
-![TryHackMe Introduction to Cryptography Result Quipqiup](/assets/img/intro-to-cryptography/intro-to-cryptography-result-quipqiup.png)
 
 Il ne nous reste plus qu'à renseigner le nom de l'auteur dans la réponse.
 
@@ -128,13 +126,9 @@ Pensez préalablement à vous placer dans le dossier contenant les fichiers à d
 
 <p align="center"><img src="/assets/img/intro-to-cryptography/intro-to-cryptography-decrypt-quote01-gpg-decrypt.png" alt="TryHackMe Introduction to Cryptography Decrypt Quote01 gpg decrypt"/></p>
 
-![TryHackMe Introduction to Cryptography Decrypt Quote01 gpg decrypt](/assets/img/intro-to-cryptography/intro-to-cryptography-decrypt-quote01-gpg-decrypt.png)
-
 Rentrez la clef demandée dans la boite de dialogue.
 
 <p align="center"><img src="/assets/img/intro-to-cryptography/intro-to-cryptography-decrypt-quote01-gpg-decrypt-key.png" alt="TryHackMe Introduction to Cryptography Decrypt Quote01 gpg decrypt key"/></p>
-
-![TryHackMe Introduction to Cryptography Decrypt Quote01 gpg decrypt key](/assets/img/intro-to-cryptography/intro-to-cryptography-decrypt-quote01-gpg-decrypt-key.png)
 
 Comme nous pouvons le voir ci-dessous, notre fichier ``quote01_clear.txt`` a bien été créé. Il ne nous reste plus qu'à lire le fichier en clair pour répondre à la question avec ``cat quote1_clear.txt``.
 
@@ -549,7 +543,7 @@ Nous avons ici plusieurs manières de le faire, cependant, je vais partir du pri
 
 ---
 
-<a name="cryto-data"></a>
+<a name="crypto-data"></a>
 
 **[TASK 8] - Cryptography and Data - Example**
 
